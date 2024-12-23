@@ -3,10 +3,11 @@ import './App.css'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Login from './Components/Login'
 import SignUp from './Components/SignUp'
-import Home from './Pages/Home'
+
 import { userContext } from './Context/userContext'
 import { useState } from 'react'
 import Cars from './Components/Cars/Cars'
+import Home from './Pages/Home/Home'
 
 function App() {
 
