@@ -109,6 +109,7 @@ const Cars = () => {
       {/* <Header outUser setCars/> */}
       
       <div className={style.container}>
+        <div className={style.miniContainer}>
         <h1>Your Cars</h1>
         {isError && <p className={style.error}>{errorMessage}</p>}
 
@@ -123,6 +124,7 @@ const Cars = () => {
         <button className={style.addButton} onClick={() => setShowForm(true)}>
           Add a Car
         </button>
+        </div>
         <div className={style.carsList}>
           <div className={style.carsList}>
             {cars.map((car, index) => {
