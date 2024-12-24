@@ -10,9 +10,9 @@ export const AuthProvider = ({ children }) => {
     const fetchUser = async () => {
       try {
         const response = await axios.get("http://localhost:3000/user/user", { withCredentials: true });
-        console.log(response.data.user);
+        console.log(response.data.user || response.data);
         
-        setUser(response.data.user);
+        setUser(response.data.user || response.data);
      
       } catch (error) {
         console.error("Error fetching user", error);
