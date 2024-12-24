@@ -1,4 +1,3 @@
-
 .carItem {
   display: flex;
   align-items: center;
@@ -11,7 +10,10 @@
   transition: transform 0.2s, box-shadow 0.2s, height 0.3s ease;
   cursor: pointer;
   overflow: hidden;
+  height: 200px;
+  width: 250px;
 }
+
 
 .carItem:hover {
   transform: scale(1.02);
@@ -48,7 +50,8 @@
   padding: 16px;
 }
 
-.delete, .edit {
+.delete,
+.edit {
   background-color: #007bff;
   color: white;
   border: none;
@@ -62,15 +65,20 @@
   transition: all 0.3s ease;
 }
 
+.delete {
+  background-color: red;
+}
+
 .delete:hover {
-  background-color: #d9363e;
+  background-color: black;
 }
 
 .edit:hover {
   background-color: #0056b3;
 }
 
-.delete:active, .edit:active {
+.delete:active,
+.edit:active {
   transform: scale(0.98);
 }
 
