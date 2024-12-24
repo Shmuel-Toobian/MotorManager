@@ -5,10 +5,10 @@ import { AuthProvider } from "./store/useContext";
 
 import Footer from "./components/footer/Footer";
 import Home from "./Pages/Home/Home";
-import SignUp from "./Components/SignUp/SignUp"
-import Cars from "./Components/Cars/Cars";
-import Header from "./Components/header/Header";
-import Login from "./Components/Login/Login";
+import SignUp from "./components/signUp/SignUp"
+import Cars from "./components/Cars/Cars";
+import Header from "./components/header/Header";
+import Login from "./components/login/Login";
 
 
 function App() {
@@ -23,9 +23,9 @@ function App() {
           <Route path="/cars" element={<Cars />} />
         </Routes>
         <Footer/>
-
       </Router>
     </AuthProvider>
+
   );
 }
 

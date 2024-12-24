@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 
 import style from "./cars.module.css";
 import axios from "axios";
-import Header from "../header/Header";
 import Car from "./Car";
+// import Header from "../header/Header";
 
 const Cars = () => {
   axios.defaults.withCredentials = true
@@ -106,7 +106,7 @@ const Cars = () => {
 
   return (
     <>
-      <Header outUser setCars/>
+      {/* <Header outUser setCars/> */}
       
       <div className={style.container}>
         <h1>Your Cars</h1>
