@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import style from '../Home/home.module.css';
-import Header from '../../components/header/Header';
-import Footer from '../../components/footer/Footer';
 
 const Home = () => {
 
@@ -27,8 +25,6 @@ const Home = () => {
 
   return (
     <>
-      <Header />
-
       <div className={style.home}>
         <main>
           <video className={style.video} autoPlay muted loop>
@@ -46,7 +42,6 @@ const Home = () => {
           </div>
         </main>
       </div>
-      <Footer />
     </>
   );
 };
