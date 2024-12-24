@@ -88,11 +88,6 @@ exports.getCars = async (req, res) => {
       path: 'user',
       select: '-password',
     });
-    console.log('Cars found:', cars);
-
-    if (cars.length === 0) {
-      return res.status(404).json({ message: "No cars found for this user" });
-    }
 
     res.status(200).json(cars);
   } catch (error) {

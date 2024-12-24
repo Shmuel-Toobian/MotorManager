@@ -1,35 +1,30 @@
-
-import './App.css'
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import Login from './Components/Login'
-import SignUp from './Components/SignUp'
-
-import { userContext } from './Context/userContext'
-import { useState } from 'react'
-import Cars from './Components/Cars/Cars'
-import Home from './Pages/Home/Home'
+// App.jsx
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { AuthProvider } from "./store/useContext";
+import Login from "./components/Login";
+import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
+import Home from "./Pages/Home/Home";
+import Signup from "./Components/SignUp";
+import Cars from "./components/cars/Cars";
 
 function App() {
-
-  const [user, setUser] = useState('')
-
   return (
-    <>
-    <userContext.Provider value={{user, setUser}}>
-    <BrowserRouter>
-    <Routes>
-      <Route path='/' element= {<Home/>}/>
-      <Route path='/signup' element= {<SignUp/>}/>
-      <Route path='/login' element= {<Login/>}/>
-      <Route path='/cars' element= {<Cars/>}/>
-    </Routes>
+    <AuthProvider>
+      <Router>
+      <Header/>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/cars" element={<Cars />} />
+        </Routes>
+        <Footer/>
 
-    </BrowserRouter>
-    </userContext.Provider>
-    
- 
-    </>
-  )
+      </Router>
+    </AuthProvider>
+  );
 }
 
-export default App
+export default App;

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import Header from '../../Components/Header/Header';
 import style from '../Home/home.module.css';
-import Footer from '../../Components/Footer/Footer';
+import Header from '../../components/header/Header';
+import Footer from '../../components/footer/Footer';
 
 const Home = () => {
 

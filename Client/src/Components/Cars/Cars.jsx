@@ -1,5 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
-import { userContext } from "../../Context/userContext";
+import React, { useEffect, useState } from "react";
 
 import style from "./cars.module.css";
 import axios from "axios";
@@ -8,7 +7,6 @@ import Car from "./Car";
 
 const Cars = () => {
   axios.defaults.withCredentials = true
-  const { user, setUser } = useContext(userContext);
   const [cars, setCars] = useState([]);
   const [errorMessage, setErrorMessage] = useState("");
   const [isError, setIsError] = useState(false);  
@@ -45,7 +43,8 @@ const Cars = () => {
     try {
 
       const response = await axios.get("http://localhost:3000/cars");
-      console.log('rrrrrrrrrrr' ,response);
+
+      console.log('rrrrrrrrrrr' ,response.data);
       
       setCars(response.data);
       setErrorMessage("");
@@ -126,19 +125,21 @@ const Cars = () => {
         </button>
         <div className={style.carsList}>
           <div className={style.carsList}>
-            {cars.map((car, index) => (
-              <Car getCars={()=>getCars()}
-                key={index}
-                picture={car.picture}
-                typeCar={car.typeCar}
-                model={car.model}
-                color={car.color}
-                carNumber={car.carNumber}
-                kilometer={car.kilometer}
-                test={car.test}
-                MOT={car.MOT}
-              />
-            ))}
+            {cars.map((car, index) => {
+              return (
+                <Car getCars={()=>getCars()}
+                  key={index}
+                  picture={car.picture}
+                  typeCar={car.typeCar}
+                  model={car.model}
+                  color={car.color}
+                  carNumber={car.carNumber}
+                  kilometer={car.kilometer}
+                  test={car.test}
+                  MOT={car.MOT}
+                />
+              )
+            })}
           </div>
         </div>
 
