@@ -2,12 +2,14 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./store/useContext";
-import Login from "./components/Login";
-import Header from "./components/header/Header";
+
 import Footer from "./components/footer/Footer";
 import Home from "./Pages/Home/Home";
-import Signup from "./Components/SignUp";
-import Cars from "./components/cars/Cars";
+import SignUp from "./Components/SignUp/SignUp"
+import Cars from "./Components/Cars/Cars";
+import Header from "./Components/header/Header";
+import Login from "./Components/Login/Login";
+
 
 function App() {
   return (
@@ -17,7 +19,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
+          <Route path="/signup" element={<SignUp />} />
           <Route path="/cars" element={<Cars />} />
         </Routes>
         <Footer/>
